@@ -38,3 +38,22 @@ function element($titre, $contenu, $niveau=1)
     echo "$contenu";
     echo "</div>";
 }
+
+function parseElement($elms) {
+    foreach($elms as $index=>$element) {
+        if($index % 3 == 0) {
+            $niveau = 1;
+        } else {
+            $niveau = $element["level"];
+        }
+        ?>
+        <?= "<h$niveau>" . $element['titre'] . "</h$niveau>"  ?>
+        <?= "<div>". $element['contenu'] ."</div>"?>
+    <?php } ?>
+<?php }
+
+$elms=[
+    ["titre"=>"Exercices","contenu"=>"Liste des exercices disponibles"],
+    ["titre"=>"Exercice n°1","contenu"=>"Créer une fonction","level"=>2],
+    ["titre"=>"Exercice n°2","contenu"=>"Afficher le contenu d'un tableau","level"=>2]
+];
