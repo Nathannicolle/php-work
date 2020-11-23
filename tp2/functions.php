@@ -22,7 +22,6 @@ function createHtmlTable($nblignes, $nbcolonnes)
 
             echo "</td>";
         }
-
         echo "</tr>";
     }
 
@@ -57,3 +56,27 @@ $elms=[
     ["titre"=>"Exercice n°1","contenu"=>"Créer une fonction","level"=>2],
     ["titre"=>"Exercice n°2","contenu"=>"Afficher le contenu d'un tableau","level"=>2]
 ];
+
+function wordCount() {
+    if(isset($_POST['chaine'])) {
+        if(!empty($_POST['chaine'])) {
+            $s = $_POST['chaine'];
+            echo str_word_count($s);
+        }
+    }
+}
+
+function charCount() {
+    if(isset($_POST['carac'])) {
+        if(!empty($_POST['carac'])) {
+            $carac = $_POST['carac'];
+            $s = $_POST['chaine'];
+            $carac_count = mb_substr_count($s, $carac);
+            echo $carac_count;
+        } else {
+            $s = $_POST['chaine']??0;
+            $carac_count = strlen($s);
+            echo $carac_count;
+        }
+    }
+}
