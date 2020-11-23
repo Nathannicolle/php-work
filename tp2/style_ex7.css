@@ -1,7 +1,14 @@
 body {
-	background-color: black;
 	color: white;
 	font-family: consolas;
+	background-color: #031321;
+}
+
+.content {
+	border: 1px solid white;
+	margin-left: 5%;
+	margin-right: 5%;
+	text-align: center;
 }
 
 form {
@@ -17,4 +24,31 @@ label {
 
 input {
 	height: 50px;
+}
+
+input,
+textarea {
+	font-size: 2em;
+}
+
+#compter {
+	font-size: 1.5em;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+}
+
+select {
+	font-size: 1.3em;
+}
+
+p {
+	font-size: 1.6em;
+}
+
+.result {
+	padding: 5%;
+	border: 1px solid white;
+	margin-top: 30px;
 }
