@@ -2,7 +2,7 @@
 include_once("functions.php");
 getHeader();
 ?>
-<form method="post" action="<?= $action ?>">
+<form method="post" action="recoAuto.php">
     <label for="name">Nom :<br></label>
     <input type="text" name="name" id="name" required="true">
     <input type="checkbox" name="memorize" id="memorize">

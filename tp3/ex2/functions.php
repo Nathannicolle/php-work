@@ -1,14 +1,9 @@
 <?php 
 function getHeader() { 
-    if(isset($_POST['memorize']) and !empty($_POST['memorize'])) {
-        $action = "recoAuto.php";
-        setcookie('name', $_POST['name'], time() + 300, null, null, false, true);
-        
-    } else {
-        $action = "resultex2.php";
-        session_start();
-        $_SESSION['name'] = $_POST['name']??0;
-        
+    session_start();
+    setcookie('name', $_POST['name']??0, time() + 300, null, null, false, true);
+    if(isset($_COOKIE['name']) && !empty($_POST['memorize'])) {
+        $_SESSION['name'] = $_COOKIE['name'];
     }
     ?>
     <!DOCTYPE html>

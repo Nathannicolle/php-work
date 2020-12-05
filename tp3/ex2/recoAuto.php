@@ -1,6 +1,6 @@
 <?php
 include_once("functions.php");
 getHeader();
-    echo $_COOKIE['name'] . "<br>";
-    var_dump($_COOKIE);
+    echo $_SESSION['name'] . "<br>";
+    var_dump($_SESSION);
 getFooter();
