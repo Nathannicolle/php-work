@@ -1,9 +1,15 @@
 <?php 
 function getHeader() { 
     session_start();
-    setcookie('name', $_POST['name']??0, time() + 300, null, null, false, true);
-    if(isset($_COOKIE['name']) && !empty($_POST['memorize'])) {
-        $_SESSION['name'] = $_COOKIE['name'];
+    if(isset($_COOKIE['name'])) {
+        header('Location: recoAuto.php');
+    }
+    
+    if(isset($_POST['memorize']) and !empty($_POST['memorize'])) {
+        $_SESSION['name'] = setcookie('name', $_POST['name'], time() + 300, null, null, false, true);
+        header('Location: recoAuto.php');
+    } else {
+        $_SESSION['name'] = $_POST['name']??0;
     }
     ?>
     <!DOCTYPE html>
