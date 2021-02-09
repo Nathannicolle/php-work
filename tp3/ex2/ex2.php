@@ -1,6 +1,9 @@
 <?php
 include_once("functions.php");
 getHeader();
+if(isset($_COOKIE['name'])) {
+    header('Location: recoAuto.php');
+}
 ?>
 <form method="post" action="recoAuto.php">
     <label for="name">Nom :<br></label>

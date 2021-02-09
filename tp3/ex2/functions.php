@@ -1,10 +1,6 @@
 <?php 
 function getHeader() { 
     session_start();
-    if(isset($_COOKIE['name'])) {
-        header('Location: recoAuto.php');
-    }
-    
     if(isset($_POST['memorize']) and !empty($_POST['memorize'])) {
         $_SESSION['name'] = setcookie('name', $_POST['name'], time() + 300, null, null, false, true);
         header('Location: recoAuto.php');
